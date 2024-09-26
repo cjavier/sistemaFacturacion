@@ -1,41 +1,31 @@
 // assets
-import { IconKey } from '@tabler/icons-react';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 
 // constant
-const icons = {
-  IconKey
-};
+const icons = { AttachMoneyIcon, MoneyOffIcon };
 
-// ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
+// ==============================|| INCOME & EXPENSES MENU ITEMS ||============================== //
 
 const pages = {
-  id: 'pages',
-  title: 'Pages',
-  caption: 'Pages Caption',
+  id: 'financial-menus',
   type: 'group',
   children: [
     {
-      id: 'authentication',
-      title: 'Authentication',
-      type: 'collapse',
-      icon: icons.IconKey,
-
-      children: [
-        {
-          id: 'login3',
-          title: 'Login',
-          type: 'item',
-          url: '/pages/login/login3',
-          target: true
-        },
-        {
-          id: 'register3',
-          title: 'Register',
-          type: 'item',
-          url: '/pages/register/register3',
-          target: true
-        }
-      ]
+      id: 'income-list',
+      title: 'Lista de Ingresos',
+      type: 'item',
+      url: '/ingresos',
+      icon: icons.AttachMoneyIcon,
+      breadcrumbs: false
+    },
+    {
+      id: 'expense-list',
+      title: 'Lista de Egresos',
+      type: 'item',
+      url: '/egresos',
+      icon: icons.MoneyOffIcon,
+      breadcrumbs: false
     }
   ]
 };

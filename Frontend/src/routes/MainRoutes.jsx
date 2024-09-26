@@ -5,7 +5,6 @@ import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
 // dashboard routing
-const DashboardDefault = Loadable(lazy(() => import('views/dashboard')));
 const DashboardMain = Loadable(lazy(() => import('views/dashboard/dashboard')));
 const CreateIncome = Loadable(lazy(() => import('views/forms/CreateIncome')));
 const CreateExpense = Loadable(lazy(() => import('views/forms/CreateExpense')));
@@ -24,15 +23,6 @@ const MainRoutes = {
     {
       path: '/',
       element: <DashboardMain />
-    },
-    {
-      path: 'dashboard',
-      children: [
-        {
-          path: 'default',
-          element: <DashboardDefault />
-        }
-      ]
     },
     {
       path: '/',

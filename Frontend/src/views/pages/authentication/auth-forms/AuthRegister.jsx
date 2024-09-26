@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
@@ -42,6 +42,7 @@ const AuthRegister = ({ ...others }) => {
 
   const [strength, setStrength] = useState(0);
   const [level, setLevel] = useState();
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -73,8 +74,8 @@ const AuthRegister = ({ ...others }) => {
 
       if (response.data) {
         console.log('Usuario registrado exitosamente', response.data);
-        // redirect to /dashboard
-        window.location.href = '/dashboard';
+        // redirect to login page
+        navigate('/login');
       }
     } catch (error) {
       setErrors({ submit: error.response?.data?.message || 'Error en el registro' });

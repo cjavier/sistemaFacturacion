@@ -16,7 +16,7 @@ import MainCard from 'ui-component/cards/MainCard';
 import SkeletonEarningCard from 'ui-component/cards/Skeleton/EarningCard';
 
 // assets
-import EarningIcon from 'assets/images/icons/earning.svg';
+import EgresosIcon from '@mui/icons-material/MoneyOff';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 // ===========================|| DASHBOARD DEFAULT - EXPENSES CARD ||=========================== //
@@ -101,17 +101,18 @@ const TotalEgresos = ({ isLoading }) => {
               <Grid item>
                 <Grid container justifyContent="space-between">
                   <Grid item>
-                    <Avatar
-                      variant="rounded"
-                      sx={{
-                        ...theme.typography.commonAvatar,
-                        ...theme.typography.largeAvatar,
-                        bgcolor: 'primary.800',
-                        mt: 1
+                  <Avatar
+                    variant="rounded"
+                    sx={{
+                      ...theme.typography.commonAvatar,
+                      ...theme.typography.largeAvatar,
+                      bgcolor: 'primary.800',
+                      mt: 1,
+                      color: '#fff' // Asegúrate de que el color del ícono sea blanco
                       }}
-                    >
-                      <img src={EarningIcon} alt="Notification" />
-                    </Avatar>
+                      >
+                    <EgresosIcon color="inherit" />  {/* Hace que el ícono herede el color blanco */}
+                  </Avatar>
                   </Grid>
                 </Grid>
               </Grid>

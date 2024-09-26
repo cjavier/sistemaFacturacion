@@ -12,7 +12,6 @@ import Toolbar from '@mui/material/Toolbar';
 
 // project import
 
-import SearchSection from '../SearchSection';
 import ProfileSection from '../ProfileSection';
 import Transitions from 'components/@extended/Transitions';
 
@@ -93,7 +92,6 @@ const MobileSection = () => {
               <ClickAwayListener onClickAway={handleClose}>
                 <AppBar color="inherit">
                   <Toolbar>
-                    <SearchSection />
                     <ProfileSection />
                   </Toolbar>
                 </AppBar>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
@@ -37,6 +38,7 @@ const AuthLogin = ({ ...others }) => {
   const [checked, setChecked] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -60,8 +62,9 @@ const AuthLogin = ({ ...others }) => {
       // Imprimir el token en consola
       console.log('JWT Token:', token);
       setSubmitting(false);
-      // mandar a /dashboard
-      window.location.href = '/dashboard';
+      // mandar a la pantalla principal
+      navigate('/');
+      
     } catch (error) {
       setError('Error de autenticación. Revisa tus credenciales.');
       setSubmitting(false);
